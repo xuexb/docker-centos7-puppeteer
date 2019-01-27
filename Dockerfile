@@ -4,7 +4,7 @@ LABEL MAINTAINER="xuexb <fe.xiaowu@gmail.com>"
 USER root
 
 # 设置默认参数
-ENV USER_TAOBAO_MIRRORS true
+ENV USE_TAOBAO_MIRRORS true
 ENV NODEJS_VERSION "8.0.0"
 ENV BUILD_CMD build
 

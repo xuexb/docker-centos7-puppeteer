@@ -4,7 +4,7 @@ source $HOME/.bashrc
 
 cd $WORK_DIR
 
-if [ "$USER_TAOBAO_MIRRORS" == "true" ]; then
+if [ "$USE_TAOBAO_MIRRORS" == "true" ]; then
   export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
   cp -r $PUPPETEER_DIR/.npmrc $HOME
 fi

@@ -15,7 +15,7 @@ docker run \
 
 以上脚本流程：
 
-1. 根据 `USER_TAOBAO_MIRRORS` 变量决定是否使用淘宝源，包括：
+1. 根据 `USE_TAOBAO_MIRRORS` 变量决定是否使用淘宝源，包括：
     - nvm 安装 Node.js 时的镜像
     - `$HOME/.npmrc` 中的默认源配置，见：[@xuexb/docker-centos7-prerender/.npmrc](https://github.com/xuexb/docker-centos7-prerender/blob/master/.npmrc)
 2. 根据 `NODEJS_VERSION` 变量使用 nvm 安装对应的 Node.js
@@ -68,7 +68,7 @@ COPY --from=builder /root/dist /usr/share/nginx/html
 
 | 变量名称 | 默认值 | 说明 |
 | --- | --- | --- |
-| `USER_TAOBAO_MIRRORS` | `true` | 是否使用淘宝源安装 Node.js 和使用淘宝源 `.npmrc` |
+| `USE_TAOBAO_MIRRORS` | `true` | 是否使用淘宝源安装 Node.js 和使用淘宝源 `.npmrc` |
 | `NODEJS_VERSION` | `8.0.0` | 安装的 Node.js 版本 |
 | `BUILD_CMD` | `build` | 编译命令，如果 `/root/src` 中有 `yarn.lock` 则使用 `yarn run $BUILD_CMD` ，否则使用 `npm run $BUILD_CMD` |
 
