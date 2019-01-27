@@ -39,8 +39,7 @@ RUN yum makecache \
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 # 安装常用版本
-RUN export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node \
-    && \. "$HOME/.bashrc" \
+RUN \. "$HOME/.bashrc" \
     && nvm install 8.0.0 \
     && nvm install 9.0.0 \
     && nvm install 10.0.0 \
