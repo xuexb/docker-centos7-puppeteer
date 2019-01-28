@@ -82,3 +82,6 @@ COPY --from=builder /root/dist /usr/share/nginx/html
     - Node.js 10.0.0
     - Node.js 11.0.0
 - Yarn 1.13.0
+
+## License
+MIT
