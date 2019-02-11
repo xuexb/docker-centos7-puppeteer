@@ -1,4 +1,4 @@
-# docker-centos7-prerender
+# docker-centos7-puppeteer
 支持 Node.js + Yarn + Puppeteer 的 CentOS7 环境
 
 ## 使用
@@ -10,14 +10,14 @@ docker run \
     --rm \
     -v /source/path:/root/src \
     -v /output/path:/root/dist \
-    xuexb/docker-centos7-prerender:latest
+    xuexb/docker-centos7-puppeteer:latest
 ```
 
 以上脚本流程：
 
 1. 根据 `USE_TAOBAO_MIRRORS` 变量决定是否使用淘宝源，包括：
     - nvm 安装 Node.js 时的镜像
-    - `$HOME/.npmrc` 中的默认源配置，见：[@xuexb/docker-centos7-prerender/.npmrc](https://github.com/xuexb/docker-centos7-prerender/blob/master/.npmrc)
+    - `$HOME/.npmrc` 中的默认源配置，见：[@xuexb/docker-centos7-puppeteer/.npmrc](https://github.com/xuexb/docker-centos7-puppeteer/blob/master/.npmrc)
 2. 根据 `NODEJS_VERSION` 变量使用 nvm 安装对应的 Node.js
 4. 判断源目录中（`/root/src`）是否存在 `yarn.lock`：
     - 如果有，则使用 `yarn install && yarn run $BUILD_CMD`
@@ -32,7 +32,7 @@ docker run \
     --rm \
     -v /source/path:/root/src \
     -v /output/path:/root/dist \
-    xuexb/docker-centos7-prerender:latest \
+    xuexb/docker-centos7-puppeteer:latest \
     /bin/bash
 ```
 
@@ -40,7 +40,7 @@ docker run \
 
 ```bash
 # 编译项目
-FROM xuexb/docker-centos7-prerender:latest as builder
+FROM xuexb/docker-centos7-puppeteer:latest as builder
 
 # 复制源文件
 COPY . /root/src
@@ -77,7 +77,7 @@ COPY --from=builder /root/dist /usr/share/nginx/html
 - vim
 - wget
 - nvm
-    - Node.js 8.0.0
+    - Node.js 8.0.0 - default
     - Node.js 9.0.0
     - Node.js 10.0.0
     - Node.js 11.0.0
